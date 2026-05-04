@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Help Informática</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: rgb(168, 26, 26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .cadastro-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 95%;
+      padding: 12px;
+      background: red;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+
+    .msg {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      display: block;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="cadastro-box">
+    <h1>Help Informática</h1>
+    <p>Crie sua conta</p>
+
+    <input type="text" id="novoUsuario" placeholder="Usuário" required>
+    <input type="password" id="novaSenha" placeholder="Senha" required>
+    <input type="password" id="confirmaSenha" placeholder="Confirmar Senha" required>
+    <button id="btnCadastrar">Cadastrar</button>
+
+    <p class="msg" id="msgCadastro"></p>
+
+    <a href="hhellp.html">🔙 Voltar para o login</a>
+  </div>
+
+  <script>
+    document.querySelector('#btnCadastrar').addEventListener('click', () => {
+      const usuario = document.querySelector('#novoUsuario').value.trim();
+      const senha = document.querySelector('#novaSenha').value;
+      const confirma = document.querySelector('#confirmaSenha').value;
+      const msg = document.querySelector('#msgCadastro');
+
+      if (!usuario || !senha || !confirma) {
+        msg.style.color = 'red';
+        msg.textContent = 'Preencha todos os campos!';
+        return;
+      }
+
+      if (senha !== confirma) {
+        msg.style.color = 'red';
+        msg.textContent = 'As senhas não coincidem!';
+        return;
+      }
+
+      if (localStorage.getItem('usuario_' + usuario)) {
+        msg.style.color = 'red';
+        msg.textContent = 'Usuário já existe!';
+        return;
+      }
+
+      localStorage.setItem('usuario_' + usuario, senha);
+      msg.style.color = 'green';
+      msg.textContent = 'Cadastro realizado com sucesso!';
+     
+      setTimeout(() => {
+        window.location.href = "hhellp.html"; // Redireciona para login
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

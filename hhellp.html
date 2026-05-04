@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Informática - Eletrônicos e Acessórios</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: rgb(185, 22, 22);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      
+    }
+
+    header h1 {
+      color: yellow;
+      font-size: 1.8em;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background: url(../SITE/) center/cover no-repeat;
+    }
+    .logo {
+      display: flex;
+      align-items: left;
+      gap: 10px;
+      width: auto;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .banner {
+      background: url(../SITE/fachada.png) center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      font-size: 2em;
+      font-weight: bold;
+      filter: opacity();
+    }
+ 
+     
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      
+    }
+
+    .produto {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+  .produto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 200px;  
+    max-width: 260px;
+    height: 420px;      
+    padding: 20px;
+    border-radius: 12px;
+}
+    .produto:hover {
+      transform: scale(1.05);
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .produto h3 {
+      margin: 15px 0 5px;
+    }
+
+    .produto p {
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    .btn-comprar {
+      background: red;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-comprar:hover {
+      background: #ebe708;
+      color: #af0d0d;
+    }
+    .produtos {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 40px;
+}
+  
+  .seta {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 5px 3px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.seta.esquerda {
+  left: 1px;
+}
+
+.seta.direita {
+  right: 10px;
+}
+    
+    .btn-agendar {
+      background: red;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-agendar:hover {
+      background: #ebe708;
+      color: #af0d0d;
+    }
+  
+ .manutencao {
+  padding: 40px;
+  text-align: center;
+  background: #f9fgray9f9;
+  margin-top: 40px;
+}
+
+.manutencao h2 {
+  color: red;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+.descricao {
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff5f5;
+  font-size: large;
+}
+
+.servicos {
+  position: relative;
+  padding: 60px 0;
+  color: white;
+  text-align: center;
+}
+
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  background: yellow;
+  padding: 20px;
+  border-radius: 20px;
+  
+}
+
+.servico {
+  background: rgb(182, 182, 182);
+  padding: 25px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+}
+
+.servico .preco {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: rgb(204, 0, 0);
+  background: yellow;
+  margin: 10px 0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+
+}
+
+    footer {
+      background-color: rgb(168, 27, 27);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .contato, .suporte {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .contato h2, .suporte h2 {
+      color: red;
+      margin-bottom: 10px;
+    }
+    .btn-suporte {
+      background: red;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .btn-suporte:hover {
+      background: #ebe708;
+      color: #af0d0d;
+    }
+
+    .contato p, .suporte p {
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+
+      .banner {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../SITE/logo_help-removebg-preview.png" alt="Logo Help Informática" style="height: 50px; vertical-align: middle;">
+      <h1>Help Informática</h1>
+    </div>
+  
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+      <a href="#suporte">Suporte</a>
+      <a href="Help_cadastro.html">Cadastro</a>
+      <a href="#carrinho">Carrinho 🛒</a> 
+    </nav>
+  </header>
+
+  <div class="banner">
+    A Melhor Tecnologia Esta Aqui!
+  </div>6
+
+  <section id="produtos" class="produtos">
+    <div class="produto">
+    <img src="../SITE/HDMI.png" alt="Cabo HDMI">
+    <h3>Cabo HDMI</h3>
+    <p>Imagem nítida em alta definição.</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+    <div class="produto">
+      <img src="../SITE/teclado mecanico.webp" alt="Teclado Mecânico">
+      <h3>Teclado Mecânico</h3>
+      <p>Precisão e conforto para digitar ou jogar.</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+
+    <div class="produto">
+      <img src="../SITE/16Rob2_MJX_Black_Image_01.png" alt="Impressora Epson">
+      <h3>Impressora Epson</h3>
+      <p>Desenvolvida para atender a grande demanda do mercado</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+
+    <div class="produto">
+      <img src="../SITE/fone.webp" alt="Headset">
+      <h3>Headset com Microfone</h3>
+      <p>Som de alta qualidade para reuniões e jogos.</p>
+      <button class="btn-comprar">Comprar</button>
+     
+    </div>
+ 
+
+    <div class="produto">
+      <img src="../SITE/kingston.png" alt="SSD Kingston 1TB">
+      <h3>SSD Kingston 1TB</h3>
+      <p>Armazenamento rápido para seu computador.</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+
+<div class="produto">
+      <img src="../SITE/mouse gamer.jpg" alt="Mouse Gamer">
+      <h3>Mouse Gamer RGB</h3>
+      <p>Alta precisão e estilo com luzes coloridas.</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+     
+    <div class="produto">
+    <img src="../SITE/Placa mae.png" alt="Placa-mãe">
+    <h3>Placa-mãe</h3>
+    <p>Compatibilidade e alta performance.</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+    
+  <div class="produto">
+      <img src="../SITE/note gamer.jpg" alt="Notebook Gamer">
+      <h3>Notebook Gamer</h3>
+      <p>Desempenho máximo para jogos e trabalho pesado.</p>
+      <button class="btn-comprar">Comprar</button>
+    </div>
+
+    <div class="produto">
+    <img src="../SITE/processador intel.png" alt="Processador">
+    <h3>Processador</h3>
+    <p>Velocidade e eficiência para o PC.</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="../SITE/Monitor.png" alt="Monitor Gamer">
+    <h3>Monitor Gamer</h3>
+    <p>Alta taxa de atualização e cores vibrantes.</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="../SITE/Modem.png" alt="Modem">
+    <h3>Roteador Wi-Fi</h3>
+    <p>oferecendo maior velocidade de navegação</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+  
+</section>
+<button class="seta esquerda">◀</button>
+<button class="seta direita">▶</button>
+ 
+<section id="manutencao" class="manutencao">
+  <h2>Serviços de Limpeza e Manutenção</h2>
+  <div class="servicos-container">
+
+    <div class="servico">
+      <h3>Limpeza Completa</h3>
+      <p class="descricao">Remoção de poeira, troca de pasta térmica e revisão interna.</p>
+      <span class="preco">R$ 180,00</span>
+      <button class="btn-agendar">Agendar Serviço</button>
+    </div>
+
+    <div class="servico">
+      <h3>Formatação com Backup</h3>
+      <p class="descricao">Instalação limpa do sistema + backup completo dos arquivos.</p>
+      <span class="preco">R$ 200,00</span>
+      <button class="btn-agendar">Agendar Serviço</button>
+    </div>
+
+    <div class="servico">
+      <h3>Troca de Pasta Térmica</h3>
+      <p class="descricao">Pasta térmica de alta qualidade para reduzir temperatura.</p>
+      <span class="preco">R$ 80,00</span>
+      <button class="btn-agendar">Agendar Serviço</button>
+    </div>
+
+    <div class="servico">
+      <h3>Diagnóstico Completo</h3>
+      <p class="descricao">Análise de hardware e software com relatório detalhado.</p>
+      <span class="preco">R$ 130,00</span>
+      <button class="btn-agendar">Agendar Serviço</button>
+    </div>
+
+  </div>
+</section>
+    
+
+  <section id="contato" class="contato">
+    <h2>Fale com o Vendedor</h2>
+    <p>Entre em contato via WhatsApp: <strong>(47) 3525-4059</strong></p>
+    <p>Email: <strong>Asr.helpinformatica@gmail.com</strong></p>
+  </section>
+
+  <section id="suporte" class="suporte">
+    <h2>Suporte Técnico</h2>
+    <p>Problemas com seu produto? Nossa equipe está pronta para ajudar.</p>
+    <button id="btnSuporte" class="btn-suporte">Chamar Suporte</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Help Informática - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const produtos = document.querySelector('.produtos');
+
+document.querySelector('.seta.esquerda').addEventListener('click', () => {
+  produtos.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+document.querySelector('.seta.direita').addEventListener('click', () => {
+  produtos.scrollBy({ left: 300, behavior: 'smooth' });
+});
+  </script>
+  
+  
+  <script>
+    
+    document.querySelector('#btnSuporte').addEventListener('click', function() {
+      alert("Nosso suporte entrará em contato em breve!");
+    });
+
+    document.querySelectorAll('.btn-comprar').forEach(botao => {
+      botao.addEventListener('click', () => {
+        alert('Produto adicionado ao carrinho!');
+      });
+        });
+    document.querySelectorAll('.btn-agendar').forEach(botao => {
+      botao.addEventListener('click', () => {
+        alert('Serviço agendado! Entraremos em contato.');
+      });
+    });
+  </script>
+</body>
+</html>
